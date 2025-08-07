@@ -1,0 +1,61 @@
+.header{
+    background-color: #6c9cd4;
+}
+ .flow-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .flow-wrapper {
+      display: flex;
+      width: max-content;
+      animation: flowRight 20s linear infinite;
+    }
+    .flow-item {
+      flex: 0 0 auto;
+      width: 25vw; /* Responsive width for 4 items per view */
+      height: 40vh;
+      margin: 0 10px;
+    }
+    .flow-item img {
+      width: 95%;
+      height: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      
+    }
+
+    .color{
+        background-color: rgb(51, 73, 106);
+        height: 30px;
+        width: 100%;
+    }
+    @keyframes flowRight {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    /* Ensure seamless loop by duplicating content */
+    .flow-wrapper:hover {
+      animation-play-state: paused;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .flow-item {
+        width: 50vw; /* Adjust for smaller screens */
+      }
+      .title-section h1 {
+        font-size: 1.8rem;
+      }
+      .title-section p {
+        font-size: 0.9rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .flow-item {
+        width: 100vw; /* Full width on very small screens */
+      }
+      .header .nav-link {
+        margin-left: 5px;
+        font-size: 0.9rem;
+      }
+    }
